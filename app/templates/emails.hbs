@@ -1,0 +1,15 @@
+{{#if hasError}}
+  {{error}}
+{{/if}}
+
+{{outlet}}
+
+{{#if isLoading}}
+  loading
+{{else}}
+  {{#each emails as |e|}}
+    <div class="text-white px-6 py-3">
+      {{e.subject}}
+    </div>
+  {{/each}}
+{{/if}}

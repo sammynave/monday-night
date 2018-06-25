@@ -1,3 +1,12 @@
-<main class="p-4 bg-purple-darkest h-screen w-screen">
+<main class="bg-purple-darkest h-screen w-screen">
+  <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-sm lg:flex-grow">
+        {{#link-to emails class="text-white"}}
+          Emails
+        {{/link-to}}
+      </div>
+    </div>
+  </nav>
   {{outlet}}
 </main>
