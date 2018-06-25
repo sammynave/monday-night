@@ -7,9 +7,19 @@
 {{#if isLoading}}
   loading
 {{else}}
-  {{#each emails as |e|}}
-    <div class="text-white px-6 py-3">
-      {{e.subject}}
-    </div>
-  {{/each}}
+  <div class="px-3">
+    {{#each emails as |e|}}
+      <div class="my-6 p-3 bg-off-white shadow-md">
+        <div class="text-xs text-blue-grey-light text-right">
+          {{e.date}}
+        </div>
+        <div class="text-base py-3 text-blue-grey">
+          {{e.subject}}
+        </div>
+        <div class="text-blue-grey-dark text-sm">
+          {{{e.body}}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
 {{/if}}
