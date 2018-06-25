@@ -1,12 +1,17 @@
 <main class="bg-blue-grey h-full min-h-screen w-screen">
-  <nav class="flex items-center justify-between flex-wrap p-6">
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-      <div class="text-sm lg:flex-grow">
+  <nav class="flex items-center justify-between flex-wrap p-3">
+    <div class="w-full block flex-grow flex items-center w-auto">
+      <div class="text-lg text-off-white flex-no-grow uppercase">
+        Monday Night
+      </div>
+      <div class="text-sm flex-auto px-2">
         {{#link-to emails class="text-off-white"}}
           Emails
         {{/link-to}}
       </div>
     </div>
   </nav>
-  {{outlet}}
+  <section class="container mx-auto max-w-md">
+    {{outlet}}
+  </section>
 </main>

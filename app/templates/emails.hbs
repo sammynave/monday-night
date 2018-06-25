@@ -5,18 +5,20 @@
 {{outlet}}
 
 {{#if isLoading}}
-  loading
+  <div class="flex items-center text-off-white h-24">
+    <span class="flex-1 text-center">loading...</span>
+  </div>
 {{else}}
   <div class="px-3">
     {{#each emails as |e|}}
       <div class="my-6 p-3 bg-off-white shadow-md">
-        <div class="text-xs text-blue-grey-light text-right">
-          {{e.date}}
+        <div class="text-xs text-blue-grey-light font-serif italic">
+          {{moment-format e.date "dddd MMM Do YYYY"}}
         </div>
-        <div class="text-base py-3 text-blue-grey">
+        <div class="text-lg py-3 text-blue-grey-dark font-hairline">
           {{e.subject}}
         </div>
-        <div class="text-blue-grey-dark text-sm">
+        <div class="text-blue-grey-dark text-base leading-normal font-serif tracking-wide border-t-4 border-blue-grey-light pt-3">
           {{{e.body}}}
         </div>
       </div>
