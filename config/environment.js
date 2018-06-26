@@ -29,6 +29,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.host = 'http://localhost:4200';
   }
 
   if (environment === 'test') {
@@ -46,7 +47,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     // here you can enable a production-specific feature
     ENV.rootURL = '/monday-night';
-//    ENV.locationType = 'hash'
+    ENV.host = 'https://sammynave.github.io/monday-night';
   }
 
   return ENV;

@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
 import fetch from 'fetch';
 import { task } from 'ember-concurrency';
+import config from 'monday-night/config/environment';
 
 export default Route.extend({
   model() {
@@ -11,7 +12,7 @@ export default Route.extend({
   },
 
   getEmails: task(function *() {
-    let r = yield fetch('/emails.json');
+    let r = yield fetch(`${config.host}/emails.json`);
     let { emails } = yield r.json();
     return emails;
   }).restartable().cancelOn('deactivate')
