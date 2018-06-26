@@ -7,6 +7,10 @@ module.exports = function(defaults) {
     vendorFiles: { 'jquery.js': null },
     'ember-math-helpers': {
       only: ['add']
+    },
+     minifyCSS: {
+      // see https://github.com/embermap/ember-cli-tailwind/issues/37
+      enabled: false
     }
   });
 
