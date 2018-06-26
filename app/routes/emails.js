@@ -12,7 +12,7 @@ export default Route.extend({
   },
 
   getEmails: task(function *() {
-    let r = yield fetch(`${config.host}/emails.json`);
+    let r = yield fetch(config.emails);
     let { emails } = yield r.json();
     return emails;
   }).restartable().cancelOn('deactivate')

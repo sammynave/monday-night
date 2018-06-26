@@ -29,7 +29,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.host = 'http://localhost:4200';
+    ENV.emails = 'http://localhost:4200/emails.json';
   }
 
   if (environment === 'test') {
@@ -47,7 +47,8 @@ module.exports = function(environment) {
   if (environment === 'production') {
     // here you can enable a production-specific feature
     ENV.rootURL = '/monday-night';
-    ENV.host = 'https://sammynave.github.io/monday-night';
+    ENV.locationType = 'hash';
+    ENV.emails = 'https://sammynave.github.io/monday-night/emails.json';
   }
 
   return ENV;
