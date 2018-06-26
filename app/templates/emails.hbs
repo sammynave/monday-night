@@ -9,8 +9,14 @@
     <span class="flex-1 text-center">loading...</span>
   </div>
 {{else}}
+  <div class="flex justify-end px-3">
+    <label class="mr-2 py-2 text-off-white">search</label>
+    <input class="py-2" value={{term}} oninput={{action (perform searchTask) value="target.value"}}>
+  </div>
+
+  sort TODO
   {{#vertical-collection
-      emails
+      filteredEmails
       tagName='div'
       class="px-3"
       estimateHeight=600
@@ -18,6 +24,6 @@
       bufferSize=1
       containerSelector="body"
       as |e i|}}
-    <EmailCard @date={{e.date}} @subject={{e.subject}} @body={{e.body}} @position="{{add i 1}}/{{emails.length}}" />
+    <EmailCard @date={{e.date}} @subject={{e.subject}} @body={{e.body}} @position="{{add i 1}}/{{filteredEmails.length}}" />
   {{/vertical-collection}}
 {{/if}}
