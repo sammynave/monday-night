@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('emails');
+  this.route('text-only');
 });
 
 export default Router;
