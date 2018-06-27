@@ -10,15 +10,16 @@
   </div>
 {{else}}
   <div class="flex justify-end px-3">
-    <div class="flex justify-end px-3">
+    <div class="flex flex-col justify-end px-3">
       <label class="mr-2 py-2 text-off-white">search</label>
       <input class="py-2" value={{search}} oninput={{action (perform searchTask) value="target.value"}}>
     </div>
-    <div class="flex justify-end px-3">
+    <div class="flex flex-col justify-end px-3">
       <label class="mr-2 py-2 text-off-white">sort</label>
       {{one-way-select sort
-          options=sortOptions
-          update=(action (mut sort))
+        class="py-2"
+        options=sortOptions
+        update=(action (mut sort))
       }}
     </div>
   </div>
@@ -28,7 +29,7 @@
 
   {{#vertical-collection filteredEmails
       tagName="div"
-      class="px-2"
+      class="px-6"
       estimateHeight=600
       staticHeight=false
       bufferSize=1
