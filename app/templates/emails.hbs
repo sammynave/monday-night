@@ -9,15 +9,15 @@
     <span class="flex-1 text-center">loading...</span>
   </div>
 {{else}}
-  <div class="flex justify-end px-3">
-    <div class="flex flex-col justify-end px-3">
+  <div class="flex justify-between sm:justify-end px-3">
+    <div class="flex flex-col px-3">
       <label class="mr-2 py-2 text-off-white">search</label>
-      <input class="py-2" value={{search}} oninput={{action (perform searchTask) value="target.value"}}>
+      <input class="p-2" value={{search}} oninput={{action (perform searchTask) value="target.value"}}>
     </div>
-    <div class="flex flex-col justify-end px-3">
+    <div class="flex flex-col px-3">
       <label class="mr-2 py-2 text-off-white">sort</label>
       {{one-way-select sort
-        class="py-2"
+        class="p-2 appearance-none"
         options=sortOptions
         update=(action (mut sort))
       }}
