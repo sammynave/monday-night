@@ -11,6 +11,25 @@ module.exports = function(defaults) {
      minifyCSS: {
       // see https://github.com/embermap/ember-cli-tailwind/issues/37
       enabled: false
+    },
+    treeShaking: {
+      enabled: true
+    },
+    'asset-cache': {
+      include: [
+        'assets/**/*'
+      ]
+    },
+    'esw-cache-fallback': {
+      patterns: [
+        '/',
+        '/*',
+        '/emails.json',
+        'https://sammynave.github.io/monday-night/',
+        'https://sammynave.github.io/monday-night/*',
+        'https://sammynave.github.io/monday-night/emails.json'
+      ],
+      version: '1' // Changing the version will bust the cache
     }
   });
 
